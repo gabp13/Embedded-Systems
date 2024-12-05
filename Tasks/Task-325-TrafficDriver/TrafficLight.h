@@ -19,6 +19,8 @@ class TrafficLight
     DigitalOut greenLED;
     Ticker t;
     LIGHT_STATE State;
+    double speed = 200;
+
 
     void yellowFlashISR();
     void flashYellow(bool flash);
@@ -34,6 +36,11 @@ class TrafficLight
     //Advance the traffic lights to the next state
     LIGHT_STATE nextState();
 
+    //Reset to red
+    void stop();
+
+    //Set flash speed
+    void setFlashSpeed(double newspeed);
 };
 
 

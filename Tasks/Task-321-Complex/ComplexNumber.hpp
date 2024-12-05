@@ -25,7 +25,7 @@ public:
         this->imag = 0.0;
     }
     
-    //Constructor 2 - default of second parameter is 1 if not specified
+    //Constructor 2 - default of second parameter is 0 if not specified
     ComplexNumber(const double r, const double i=0.0) {
         this->real = r;
         this->imag = i;

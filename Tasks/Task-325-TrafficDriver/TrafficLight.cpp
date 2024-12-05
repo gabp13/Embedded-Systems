@@ -30,7 +30,7 @@ void TrafficLight::flashYellow(bool flash) {
     t.detach(); //Turn off ticker
     if (flash) {
         //Turn on ticker ..... Hmmm, interrupts!
-        t.attach(callback(this, &TrafficLight::yellowFlashISR), 200ms);
+        t.attach(callback(this, &TrafficLight::yellowFlashISR), speed);
     }
 }
 
@@ -91,3 +91,16 @@ TrafficLight::LIGHT_STATE TrafficLight::nextState()
     //Return the current state (for information)
     return State; 
 } 
+
+void TrafficLight::stop()
+{
+    flashYellow(false);
+    redLED = 1;
+    yellowLED = 0;
+    greenLED = 0;    
+}
+
+void TrafficLight::setFlashSpeed(double)
+{
+    
+}
